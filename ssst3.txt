@@ -1,0 +1,76 @@
+package Bikinbikin;
+
+public class Tebuskanlaaah {
+	long id ;
+	String product;
+	double price;
+	String status;
+	double utang;
+	public Tebuskanlaaah(long id, String product, double price, String status, double utang){
+		this.id=id;
+		this.product=product;
+		this.price=price;
+		this.status=status;
+		this.utang=utang;
+	}
+	
+	
+	
+	static void printHeader() {
+        String leftAlignFormat = "| %-13s | %-5s | %-8s | %-5s |%n";
+
+        printLine();
+        System.out.format(leftAlignFormat, "ID", "Product", "Price", "Status", "Utang");
+        printLine();
+    }
+
+    static void printLine() {
+        System.out.format("+-----------------+--------+-----------+-------+%n");
+    }
+
+    void printRow() {
+        String leftAlignFormat = "| %-13s | %-5s | %-8s | %-5d |%n";
+        System.out.format(leftAlignFormat, "ID", "Product", "Price", "Status", "Utang");
+    }
+
+	public long getID() {
+		return id;
+	}
+
+	public void setID(long id) {
+		this.id = id;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+	}
+	
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public double getUtang() {
+		return utang;
+	}
+
+	public void setUtang(double utang) {
+		this.utang = utang;
+	}
+
+	
+
+}
