@@ -1,0 +1,37 @@
+package Bikinbikin;
+import java.util.Scanner;
+public class Menghitung {
+
+	public static void main(String[] args) {
+		long id;
+		int uangtebus = 0;
+		int utangs = 0;
+		int j = 0;
+		
+		String Status = null;
+		Scanner scanner = new Scanner(System.in);	
+	System.out.println("Masukkan ID barang yang ingin ditebus: ");
+	id = scanner.nextLong();
+	System.out.print("Masukkan biaya yang ingin ditebus: ");
+	uangtebus = scanner.nextInt();
+	
+	
+	do{
+	if(uangtebus%10000 == 0)
+		System.out.println("NYUSUUUL YAW");
+	else
+		System.out.println("Uang tebus Anda tidak memenuhi kriteria");
+	}while(uangtebus!=0);
+	System.out.println();
+	j = uangtebus-utangs;
+	
+	if(j == 0)
+		System.out.println(Status + "Lunas");
+	else
+		System.out.println("Sisa utang Anda adalah: " + j);
+	
+	
+
+	}
+
+}

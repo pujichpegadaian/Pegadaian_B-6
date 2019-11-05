@@ -8,27 +8,73 @@ public class Database {
 	private double utang;
 	private String status;
 	private String description;
+	private int ID=0;
 	
-	
-	
-	public void setProduct(String product) {
+	public Database(String product, String nama, double price, double utang, String status, String description) {
 		this.product = product;
-	}
-	public void setNama(String nama) {
 		this.nama = nama;
-	}
-	public void setPrice(double price) {
 		this.price = price;
+		this.utang = utang;
+		this.status = status;
+		this.description = description;
 	}
+	
+	public void printHeaderInv() {
+		System.out.println("===============================================");
+		String Format = "%-3 | %-15s | %-5s | %-15s | %-10d |%n";
+		System.out.format(Format, "ID", "Nama", "Product", "Description", "Price" );
+		System.out.println("===============================================");
+	}
+	
+	public void printRowInv() {
+        String Format = "%-3 | %-15s | %-5s | %-15s | %-10d |%n";
+        System.out.format(Format, ID++, nama, product, description, price);
+    }
+	
+	public void printFooterInv() {
+		System.out.println("===============================================");
+	}
+	
+	public void printHeaderTebus() {
+		System.out.println("===============================================");
+		String Format = "%-3 | %-15s | %-15s | %-8s | %-15d |%n";
+		System.out.format(Format, "ID", "Product", "Price", "Status", "Utang" );
+		System.out.println("===============================================");
+	}
+	
+	public void printRowTebus() {
+		String Format = "%-3 | %-15s | %-15s | %-8s | %-15d |%n";
+        System.out.format(Format, ID++, product, price, status, utang);
+    }
+	
+	public void printFooterTebus() {
+		System.out.println("===============================================");
+	}
+	
+//	public void printHeaderGadai() {
+//		System.out.println("===============================================");
+//		String Format = "%-3 | %-15s | %-5s | %-15s | %-10d |%n";
+//		System.out.format(Format, "ID", "Nama", "Product", "Description", "Price" );
+//		System.out.println("===============================================");
+//	}
+//	
+//	public void printRowGadai() {
+//        String Format = "%-3 | %-15s | %-5s | %-15s | %-10d |%n";
+//        System.out.format(Format, ID++, nama, product, description, price);
+//    }
+//	
+//	public void printFooterGadai() {
+//		System.out.println("===============================================");
+//	}
+	
 	public void setUtang(double utang) {
 		this.utang = utang;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
+
 	public String getProduct() {
 		return product;
 	}
@@ -47,5 +93,6 @@ public class Database {
 	public String getDescription() {
 		return description;
 	}
+	
 	
 }
