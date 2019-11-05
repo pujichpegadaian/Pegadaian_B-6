@@ -1,3 +1,4 @@
+package com.pegadaian.ojt.AssignmentGit;
 import java.util.ArrayList;
 import java.util.Scanner;
 
