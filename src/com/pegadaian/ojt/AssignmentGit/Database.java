@@ -67,6 +67,14 @@ public class Database {
 //		System.out.println("===============================================");
 //	}
 	
+	public void setUtang(double utang) {
+		this.utang = utang;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public String getProduct() {
 		return product;
 	}
