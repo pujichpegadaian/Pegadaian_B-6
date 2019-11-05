@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 package com.pegadaian.ojt.AssignmentGit;
+>>>>>>> Tebus
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,6 +40,8 @@ public class Tebus {
 				if (biayaTebus % 10000 == 0) {
 					double updateTebus = arrTebus.get(i).getUtang() - biayaTebus;
 					arrTebus.get(i).setUtang(updateTebus);
+
+
 					if(updateTebus<0) {
 						System.out.println("Mohon untuk membayar dengan maksimal 4000000");
 					}else if (updateTebus == 0){
@@ -46,6 +51,7 @@ public class Tebus {
 						System.out.println("Sisa hutang Anda ialah: " + updateTebus);
 					}
 					}
+
 					System.out.println("Berhasil menebus");
 					System.out.println("Utang sekarang berjumlah "+updateTebus);
 					break;
@@ -56,8 +62,7 @@ public class Tebus {
 			} else if(idnya != arrTebus.get(i).getId()){
 				System.out.println(arrTebus.get(i).getId());
 				System.out.println("Salah");
-		}		
-		}
+	}
 	}
 
 public void printHeaderTebus() {
@@ -80,5 +85,6 @@ public void printFooterTebus() {
 //					dumperDB.printRow();
 //
 //Database.printFooter();
+
 }
 
