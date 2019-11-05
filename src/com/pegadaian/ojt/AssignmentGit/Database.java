@@ -8,15 +8,16 @@ public class Database {
 	private double utang;
 	private String status;
 	private String description;
-	private int ID=0;
+	private int ID;
 	
-	public Database(String product, String nama, double price, double utang, String status, String description) {
+	public Database(int ID, String product, String nama, double price, double utang, String status, String description) {
 		this.product = product;
 		this.nama = nama;
 		this.price = price;
 		this.utang = utang;
 		this.status = status;
 		this.description = description;
+		this.ID = ID;
 	}
 	
 	public void printHeaderInv() {
