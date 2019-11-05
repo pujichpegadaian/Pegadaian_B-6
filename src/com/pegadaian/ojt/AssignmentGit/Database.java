@@ -10,16 +10,25 @@ public class Database {
 	private String description;
 	
 	
-	public Database(String product, String nama, double price, double utang, String status, String description) {
-		super();
+	
+	public void setProduct(String product) {
 		this.product = product;
+	}
+	public void setNama(String nama) {
 		this.nama = nama;
+	}
+	public void setPrice(double price) {
 		this.price = price;
+	}
+	public void setUtang(double utang) {
 		this.utang = utang;
+	}
+	public void setStatus(String status) {
 		this.status = status;
+	}
+	public void setDescription(String description) {
 		this.description = description;
 	}
-	
 	public String getProduct() {
 		return product;
 	}
