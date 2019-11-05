@@ -1,3 +1,6 @@
+
+package com.pegadaian.ojt.AssignmentGit;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,6 +39,20 @@ public class Tebus {
 				if (biayaTebus % 10000 == 0) {
 					double updateTebus = arrTebus.get(i).getUtang() - biayaTebus;
 					arrTebus.get(i).setUtang(updateTebus);
+
+
+
+					if(updateTebus<0) {
+						System.out.println("Mohon untuk membayar dengan maksimal 4000000");
+					}else if (updateTebus == 0){
+						System.out.println("Status pelunasan Anda ialah: lunas");
+					}else{
+						System.out.println("Status pelunasan Anda ialah: belum lunas");
+						System.out.println("Sisa hutang Anda ialah: " + updateTebus);
+					}
+					}
+
+
 					System.out.println("Berhasil menebus");
 					System.out.println("Utang sekarang berjumlah "+updateTebus);
 					break;
@@ -46,35 +63,29 @@ public class Tebus {
 			} else if(idnya != arrTebus.get(i).getId()){
 				System.out.println(arrTebus.get(i).getId());
 				System.out.println("Salah");
-				
-		}		
-		}
-		
+
+	}
 	}
 
+public void printHeaderTebus() {
+	System.out.println("===============================================");
+	String Format = "%-3 | %-15s | %-15s | %-8s | %-15d |%n";
+	System.out.format(Format, "ID", "Product", "Price", "Status", "Utang" );
+	System.out.println("===============================================");
+}
 
-		
-		
-		
-//		if (idnya == arTebus.getId(i)) {
-//		System.out.println("Id yang diinputkan sesuai");
-//		System.out.print("Masukkan biaya yang ingin ditebus: ");
-//		double biayaTebus = sc.nextDouble();
-//		System.out.print("Biaya yang ingin ditebus:  " +biayaTebus);
-//		double updateTebus = arTebus.getPrice - arTebus.getUtang;
-		
-		//update Price menjadi updateTebus;
-		
-		//update utang		
-		
-		
-		
-		
-		
-		
-//	private static Object idnya(int i) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+public void printRowTebus() {
+	String Format = "%-3 | %-15s | %-15s | %-8s | %-15d |%n";
+    System.out.format(Format, id++, product, price, status, utang);
+}
+
+public void printFooterTebus() {
+	System.out.println("===============================================");
+}
+//Database.printHeader();
+//for (Database dumperDB : array) 
+//					dumperDB.printRow();
+//
+//Database.printFooter();
 }
 
