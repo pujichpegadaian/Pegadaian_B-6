@@ -1,5 +1,5 @@
-package com.pegadaian.ojt.tugas;
-import com.pegadaian.ojt.tugas.Database;
+package com.pegadaian.ojt.AssignmentGit;
+import com.pegadaian.ojt.AssignmentGit.Database;
 
 import java.util.ArrayList;
 import java.util.Scanner;

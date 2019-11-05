@@ -94,6 +94,8 @@ public class Database {
 	public String getDescription() {
 		return description;
 	}
-	
+	public int getID() {
+		return ID;
+	}
 	
 }

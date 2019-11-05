@@ -1,8 +1,8 @@
-package com.pegadaian.ojt.tugas;
+package com.pegadaian.ojt.AssignmentGit;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import com.pegadaian.ojt.tugas.Database;
+import com.pegadaian.ojt.AssignmentGit.Database;
 
 public class Gadai {
 	public static void gadai(ArrayList<Database> data) {

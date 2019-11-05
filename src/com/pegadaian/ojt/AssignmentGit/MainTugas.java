@@ -1,4 +1,4 @@
-package com.pegadaian.ojt.tugas;
+package com.pegadaian.ojt.AssignmentGit;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,6 +21,8 @@ public class MainTugas {
 		System.out.println("3. Tampilkan Inventory");
 		System.out.println("4. exit");
 		
+		TampilkanInventory tampil = new TampilkanInventory();
+		Tebus tebus = new Tebus();
 		
 		ArrayList<Database> arrayData = new ArrayList<Database>();
 		
@@ -31,9 +33,11 @@ public class MainTugas {
 					Gadai.gadai(arrayData);
 //					stop;
 				} else if(menu==2) {
-					System.out.println("Tebus");
+					tebus.tebus(arrayData);
+//					System.out.println("Tebus");
 				} else if(menu==3) {
-					System.out.println("Tampilkan Inventory");
+					tampil.tampilkan(arrayData);
+//					System.out.println("Tampilkan Inventory");
 				} else if(menu==4) {
 					System.out.println("Exit");
 				} else {

@@ -1,3 +1,5 @@
+package com.pegadaian.ojt.AssignmentGit;
+
 public class DataTebus {
 	int id;
 	String product;

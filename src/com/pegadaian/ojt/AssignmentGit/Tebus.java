@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tebus {
-	public  void tebus(ArrayList arrTebus) { 
+	public  void tebus(ArrayList<Database> arrTebus) { 
 		
 //		DataTebus[] arTebus = new DataTebus[2];
 //		
@@ -28,7 +28,7 @@ public class Tebus {
 		
 		//menyamakan input id dengan id yang ada di array
 		for (int i = 0; i <= arrTebus.size(); i++) {
-			if(idnya == arrTebus.get(i).getId()) {
+			if(idnya == arrTebus.get(i).getID()) {
 				System.out.println("Id yang diinputkan sesuai");
 				System.out.print("Masukkan biaya yang ingin ditebus: ");
 				
@@ -50,7 +50,7 @@ public class Tebus {
 						System.out.println("Status pelunasan Anda ialah: belum lunas");
 						System.out.println("Sisa hutang Anda ialah: " + updateTebus);
 					}
-					}
+					
 
 
 					System.out.println("Berhasil menebus");
@@ -60,12 +60,12 @@ public class Tebus {
 					System.out.println("Belum berhasil menebus");
 					break;
 				}
-			} else if(idnya != arrTebus.get(i).getId()){
-				System.out.println(arrTebus.get(i).getId());
+			} else if(idnya != arrTebus.get(i).getID()){
+				System.out.println(arrTebus.get(i).getID());
 				System.out.println("Salah");
 
 	}
-	}
+	}}
 
 public void printHeaderTebus() {
 	System.out.println("===============================================");
@@ -73,15 +73,15 @@ public void printHeaderTebus() {
 	System.out.format(Format, "ID", "Product", "Price", "Status", "Utang" );
 	System.out.println("===============================================");
 }
-
-public void printRowTebus() {
-	String Format = "%-3 | %-15s | %-15s | %-8s | %-15d |%n";
-    System.out.format(Format, id++, product, price, status, utang);
-}
-
-public void printFooterTebus() {
-	System.out.println("===============================================");
-}
+//
+//public void printRowTebus() {
+//	String Format = "%-3 | %-15s | %-15s | %-8s | %-15d |%n";
+//    System.out.format(Format, id++, product, price, status, utang);
+//}
+//
+//public void printFooterTebus() {
+//	System.out.println("===============================================");
+//}
 //Database.printHeader();
 //for (Database dumperDB : array) 
 //					dumperDB.printRow();
