@@ -1,14 +1,16 @@
 package com.pegadaian.ojt.tugas;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import com.pegadaian.ojt.tugas.Database;
 
 public class Gadai {
-	public static void main(String[] args) {
+	public static void gadai(ArrayList<Database> data) {
 			int menu;
-			int harga;
-			String nama;
-			String produk;
-			String detil;
+			Double harga = null;
+			String nama = null;
+			String produk = null;
+			String detil = null;
 			boolean stNama = false;
 			boolean stKat = false;
 			boolean stDesk = false;
@@ -81,8 +83,12 @@ public class Gadai {
 			while(loop) {
 				try {
 					System.out.println("Price : ");
-					harga = input.nextInt();
-					loop=false;
+					harga = input.nextDouble();
+					if(harga%10000 == 0) {
+						loop=false;
+					} else {
+						System.out.println("Harga harus kelipatan 10.000");
+					}
 				} catch (Exception e) {
 					System.out.println("Masukkan angka");
 					input.next();
@@ -90,6 +96,15 @@ public class Gadai {
 				}
 			}
 			loop=true;
+		
+			Database dataGadai = new Database (data.size()+1, produk, nama, harga, harga, "gadai", detil);
+			data.add(dataGadai);
+			
+			for(int i=0; i<data.size(); i++)
+	        {
+				System.out.println(data.get(i).getID()+" nama :"+data.get(i).getNama());
+	            
+	        }
 			
 //			array[array.length]= new database [produk, nama, harga, harga, "gadai", detil]
 
