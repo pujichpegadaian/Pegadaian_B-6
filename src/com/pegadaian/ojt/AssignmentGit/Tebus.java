@@ -2,59 +2,79 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Tebus {
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public  void tebus(ArrayList arrTebus) { 
 		
-		int id;
-		String product;
-		double price = 0;
-		String status;
-		double utang;
+//		DataTebus[] arTebus = new DataTebus[2];
+//		
+//		//Buat array sendiri
+//		arTebus[0] = new DataTebus(1,"Laptop",4000000.00,"gadai",4000000.00);
+//		arTebus[1] = new DataTebus(2,"Motor",7000000.00,"gadai",7000000.00);
 		
-		
-		System.out.println("Pegadaian System");
-		System.out.println("================");
-		System.out.println("1. Gadai");
-		System.out.println("2. Tebus");
-		System.out.println("3. Tampilkan Inventory");
-		System.out.println("4. Exit");
-		System.out.print("Opsi: ");
-		
-		//coba data sendiri
-		ArrayList<DataTebus> arrTebus = new ArrayList<>();
-		arrTebus.add(new DataTebus(1,"Laptop",4000000.00,"gadai",4000000.00));
-		arrTebus.add(new DataTebus(2,"Motor",7000000.00,"gadai",7000000.00));
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Masukkan opsi: ");
-		int opsi = sc.nextInt();
+		
+		//arrTebus.add(new DataTebus(1,"Laptop",4000000.00,"gadai",4000000.00));
+		//arrTebus.add(new DataTebus(2,"Motor",7000000.00,"gadai",7000000.00));
+//		i
+		//Input ID yang ingin ditebus
+		int idnya;
+		System.out.print("Masukkan ID yang ingin ditebus: ");
+		idnya = sc.nextInt();
+		System.out.println("ID yang dimasukkan adalah " +idnya);
 		
 		
-			if (opsi==1) {
-				System.out.println("gadai");
-			} else if (opsi==2){
-				System.out.println("Tebus");
-				System.out.print("Masukkan yang ditebus: ");
-				double yangdiTebus = sc.nextDouble();
-				double updateUtang = price - yangdiTebus;
+		//menyamakan input id dengan id yang ada di array
+		for (int i = 0; i <= arrTebus.size(); i++) {
+			if(idnya == arrTebus.get(i).getId()) {
+				System.out.println("Id yang diinputkan sesuai");
+				System.out.print("Masukkan biaya yang ingin ditebus: ");
 				
-		
-			
-			
+				// Input biaya tebus
+				double biayaTebus = sc.nextDouble();
+				System.out.print("Biaya yang ingin ditebus:  " +biayaTebus);
+				// Biaya tebus harus kelipatan 10000
+				if (biayaTebus % 10000 == 0) {
+					double updateTebus = arrTebus.get(i).getUtang() - biayaTebus;
+					arrTebus.get(i).setUtang(updateTebus);
+					System.out.println("Berhasil menebus");
+					System.out.println("Utang sekarang berjumlah "+updateTebus);
+					break;
+				} else if(biayaTebus % 10000 != 0) {
+					System.out.println("Belum berhasil menebus");
+					break;
+				}
+			} else if(idnya != arrTebus.get(i).getId()){
+				System.out.println(arrTebus.get(i).getId());
+				System.out.println("Salah");
+				
+		}		
 		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
 
+
+		
+		
+		
+//		if (idnya == arTebus.getId(i)) {
+//		System.out.println("Id yang diinputkan sesuai");
+//		System.out.print("Masukkan biaya yang ingin ditebus: ");
+//		double biayaTebus = sc.nextDouble();
+//		System.out.print("Biaya yang ingin ditebus:  " +biayaTebus);
+//		double updateTebus = arTebus.getPrice - arTebus.getUtang;
+		
+		//update Price menjadi updateTebus;
+		
+		//update utang		
+		
+		
+		
+		
+		
+		
+//	private static Object idnya(int i) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 }
 

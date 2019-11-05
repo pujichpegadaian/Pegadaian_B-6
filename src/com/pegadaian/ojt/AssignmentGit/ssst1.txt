@@ -1,0 +1,47 @@
+import java.awt.BorderLayout;
+import java.util.Vector;
+import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class JTableVector {
+  public static void main(String args[]) {
+    JFrame frame = new JFrame();
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    Double price;
+    Double utang;
+    String Gadai1;
+    Scanner scanner = new Scanner(System.in);
+    
+    
+    Vector<String> rowOne = new Vector<String>();
+    rowOne.addElement("1");
+    rowOne.addElement("Laptop");
+    rowOne.addElement("4000000");
+    rowOne.addElement("Gadai1");
+    rowOne.addElement("4000000");
+    
+    Vector<String> rowTwo = new Vector<String>();
+    rowTwo.addElement("2");
+    rowTwo.addElement("Motor");
+    rowTwo.addElement("7000000");
+    rowTwo.addElement("Gadai");
+    rowTwo.addElement("7000000");
+    
+    Vector<Vector> rowData = new Vector<Vector>();
+    rowData.addElement(rowOne);
+    rowData.addElement(rowTwo);
+    
+    Vector<String> columnNames = new Vector<String>();
+    columnNames.addElement("ID");
+    columnNames.addElement("Product");
+    columnNames.addElement("Price");
+    columnNames.addElement("Status");
+    columnNames.addElement("Utang");
+    JTable table = new JTable(rowData, columnNames);
+
+    JScrollPane scrollPane = new JScrollPane(table);
+    frame.add(scrollPane, BorderLayout.CENTER);
+    frame.setSize(300, 150);
+    frame.setVisible(true);
